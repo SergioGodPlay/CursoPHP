@@ -10,7 +10,17 @@
 
 <?php
 
+    //Por convencion el nombre de las constantes debe ir en MAYUSCULAS
+    define("AUTOR", "Sergio");
 
+    //NO SE PUEDE CAMBIAR EL VALOR DE LA CONSTANTE
+    //define("AUTOR", "Katie");
+
+    //echo "El autor es: " . AUTOR;
+
+    echo __LINE__ . "<br>";
+
+    echo "El archivo se encuentra en: " . __FILE__;
 
 ?>
     
