@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo Operadores</title>
-
 </head>
 <body>
 
 <p>&nbsp;</p>
 
-<form action="" class="form1" name="form1" method="post">
+<form action="calculadora.php" class="form1" name="form1" method="post">
     <p>
 
     <label for="num1"></label>
@@ -26,8 +25,6 @@
         <option>Multiplicacion</option>
         <option>Division</option>
         <option>Modulo</option>
-        <option>Incremento</option>
-        <option>Decremento</option>
     </select>
 
     </p>
@@ -40,23 +37,6 @@
 
 <p>&nbsp;</p>
 
-    <?php
-
-        include("calculadora.php");
-
-        if(isset($_POST["button"])){
-
-            $numero1 = $_POST["num1"];
-        
-            $numero2 = $_POST["num2"];
-        
-            $operacion = $_POST["operacion"];
-        
-            calcular($operacion);
-        
-        }
-
-    ?>
-
+ 
 </body>
 </html>
