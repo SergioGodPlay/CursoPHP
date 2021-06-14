@@ -1,0 +1,52 @@
+
+Comandos SQL
+
+1.Ingresar desde consola a MySql
+
+mysql -u- root -p
+
+2. Si tenemos password ingresarlo, si no por defecto el password es en blanco
+
+3. Crear bases de datos
+
+CREATE DATABASE USUARIOS;
+
+4. Manipular o ver informacion de la base de datos
+
+USE USUARIOS;
+
+5. Crear una tabla con los campos y el tipo de dato
+
+CREATE TABLE DATOSUSUARIOS (NOMBRE VARCHAR(30), CLAVE VARCHAR(10));
+
+6. Eliminar tablas o base de datos:
+
+DROP TABLE DATOSUSUARIOS - DROP DATABASE USUARIOS;
+
+7. Ver los campos de una tabla
+
+DESCRIBE DATOSUSUARIOS;
+
+8. Eliminar campos de una tabla
+
+ALTER TABLE DATOSPERSONALES DROP EDAD;
+
+9. Agregar un campo a una tabla
+
+ALTER TABLE datospersonales ADD COLUMN EDAD INT(2);
+
+10. Insertar registros en una tabla
+
+INSERT INTO `datospersonales`(`NIF`, `NOMBRE`, `APELLIDO`, `EDAD`) 
+VALUES ('1026284768','Sergio Ricardo','Sanchez Jaimes',27);
+
+11. Ver todos los registros de una tabla
+
+SELECT * FROM DATOSPERSONALES;
+
+12 Ver solo algunos campos de una tabla
+
+SELECT NOMBRE, APELLIDO FROM DATOSPERSONALES;
+
+
+
