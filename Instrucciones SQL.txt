@@ -44,9 +44,36 @@ VALUES ('1026284768','Sergio Ricardo','Sanchez Jaimes',27);
 
 SELECT * FROM DATOSPERSONALES;
 
-12 Ver solo algunos campos de una tabla
+12. Ver solo algunos campos de una tabla
 
 SELECT NOMBRE, APELLIDO FROM DATOSPERSONALES;
+
+
+13. INYECCION SQL
+
+Se trata de una tecnica de hacking que consiste en incrustar un codigo sql adicional que se agrega
+a una instruccion sql creada previamente con el fin de mostrar informacion que el programador no tenia
+planteado mostrar
+
+Ejm:
+
+Consulta de SQL de busqueda
+
+$consulta = "SELECT * FROM PRODUCTOS WHERE NOMBREARTÍCULO LIKE '%$busqueda%'";
+
+Consulta con inyeccion SQL
+
+SELECT * FROM PRODUCTOS WHERE NOMBREARTÍCULO ='cenicero ' or 'm'='m'
+
+DELETE * FROM USUARIOS WHERE USUARIO = 'Sergio' AND CONTRA = ' or '1'='1'
+
+
+
+- COOKIE
+
+El anglicismo cookie, usado también galleta o galleta informática, es un término que hace referencia a una pequeña información enviada 
+por un sitio web y almacenada en el navegador del usuario, de manera que el sitio web puede consultar la actividad previa del navegador. 
+Si se ha realizado un curso desde un inicio o una nueva aplicación se pueden realizar con la misma contraseña o no en su sistema
 
 
 

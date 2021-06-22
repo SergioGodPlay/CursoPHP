@@ -35,9 +35,9 @@
 </head>
 <body>
 
-    <h1>Alta de Articulos Nuevos</h1>
+    <h1>Insertar Registros</h1>
 
-    <form action="resultados_insertar_registros.php" method="GET">
+    <form action="pagina_eliminar_pdo.php" method="POST">
 
         <table border="0" align="center">
 

@@ -1,19 +1,21 @@
 
 <?php
 
-    //Almacenamos en una variable lo que esta en el cuadro de texto
-    $busqueda = $_GET["buscar"];
-
     require("datos_conexion.php");
 
     //La funcion mysqli_connect abre una nueva conexion con una base de datos MYSQL
     $conexion = mysqli_connect($db_host,$db_usuario,$db_contra);
 
+    //Almacenamos en una variable lo que esta en el cuadro de texto
+    $usuario = mysqli_real_escape_string($conexion, $_GET["usu"]);
+
+    $contra = mysqli_real_escape_string($conexion, $_GET["con"]);
+
     //Si hubo un error al conectar con la base de datos
     if(mysqli_connect_errno()){
 
         echo "Fallo al conectar con la base de datos";
-    
+
         //Termina el intento con la conexion y sale del programa
         exit();
 
@@ -28,31 +30,23 @@
     //Consulta con filtro
     //$consulta = "SELECT * FROM PRODUCTOS WHERE NOMBREARTÍCULO LIKE '%$busqueda%'";
 
-    $consulta = "SELECT * FROM PRODUCTOS WHERE NOMBREARTÍCULO ='$busqueda'";
+    $consulta = "DELETE FROM USUARIOS WHERE USUARIO ='$usuario' AND CONTRA = '$contra'";
 
     echo "$consulta <br><br>";
 
-    $resultado = mysqli_query($conexion,$consulta);
+    mysqli_query($conexion, $consulta);
 
-    //Mientras haya registros en el resultset (No importa si hay 2 o mil registros
-    //SE RECORRERA TODA LA TABLA)
-    while($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+    if(mysqli_affected_rows($conexion) > 0){
 
-        echo "<table><tr><td>";
+        echo "Se ha eliminado un registro";
 
-        echo $fila["CÓDIGOARTÍCULO"] . "</td><td>";
-    
-        echo $fila["NOMBREARTÍCULO"] . "</td><td>";
+    }else{
 
-        echo $fila["SECCIÓN"] . "</td><td>";
-
-        echo $fila["PRECIO"] . "</td><td>";
-
-        echo $fila["IMPORTADO"] . "</td><td>";
-    
-        echo $fila["PAÍSDEORIGEN"] . "<td></td></tr></table>";
+        echo "No se ha encontrado informacion para borrar";
 
     }
+
+    
 
     mysqli_close($conexion);
 ?>
