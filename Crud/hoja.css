@@ -1,0 +1,32 @@
+body{
+    background: #ffc;
+}
+
+h1{
+    text-align: center;
+}
+
+.subtitulo{
+    font-size: 1em;
+    text-align: center;
+    margin: auto;
+}
+
+.bot, .sin{
+    border: transparent;
+    float: left;
+    text-align: center;
+}
+
+td{
+    border: 1px solid rgb(175, 173, 173);
+    padding: 2px;
+    text-align: center;
+}
+
+.primera_fila{
+    text-decoration: underline;
+    text-align: center;
+    background: rgb(226, 159, 15);
+    font-size: large;
+}
